@@ -14,14 +14,37 @@ function computerPlay() {
     function randomNumber() { 
         return Math.floor(Math.random() * (3-0) + 0);
     }
-    let choiceNumber = ['rock' , 'scissor', 'paper']
+    const choiceNumber = ['rock' , 'scissor', 'paper']
 
     return choiceNumber[randomNumber()]     
 }
 
+function playRound() {
+   
+    const computerSelection = computerPlay()
+    let playerSelection = prompt('Paper, Rock or Scissor!').toLowerCase();
+
+    if (playerSelection === computerSelection) {
+        return 'Draw!';
+    } else if (playerSelection === 'scissor' && computerSelection === 'paper'){
+        return 'U Won!';
+    } else if (playerSelection === 'scissor' && computerSelection === 'rock' ){
+        return 'U Lose!';
+    } else if (playerSelection === 'paper' && computerSelection === 'rock'){
+        return 'U Won!';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissor'){
+        return 'U Lose!';
+    } else if (playerSelection === 'rock' && computerSelection === 'scissor'){
+        return 'U Won!';
+    } else if (playerSelection === 'rock' && computerSelection === 'paper'){
+        return 'U Lose!'
+    }
+    
+}
 
 
-// 1.
+
+
 
 </script>
     
