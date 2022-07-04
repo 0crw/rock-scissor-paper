@@ -18,11 +18,24 @@ function computerPlay() {
 
     return choiceNumber[randomNumber()]     
 }
+ function playerPlay(){
+    let playerSelection = prompt('Paper, Rock or Scissor!').toLowerCase();
+    
+    if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection ==='scissor'){
+        return playerSelection;
+    } else {
+        console.log("Fai la tue scelta correttamente!")
+        return playerPlay()
+    }
+}
+
+ // let playerSelection = prompt('Paper, Rock or Scissor!').toLowerCase();
+
 
 function playRound() {
    
-    const computerSelection = computerPlay()
-    let playerSelection = prompt('Paper, Rock or Scissor!').toLowerCase();
+    const computerSelection = computerPlay();
+    const playerSelection = playerPlay();
 
     if (playerSelection === computerSelection) {
         return 'Draw!';
@@ -41,6 +54,8 @@ function playRound() {
     }
     
 }
+
+
 
 
 
