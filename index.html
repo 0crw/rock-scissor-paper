@@ -44,9 +44,9 @@ answer = prompt('Select a round number')
     }
 }
 
+game()
 
-
- // The game start below =>
+// The game start below =>
  function playRound() {
    
     let computerSelection = computerPlay();
@@ -75,16 +75,27 @@ answer = prompt('Select a round number')
     }
     
 }
-
+function game(){
 // 'for' Loop to define the number of rounds and a winner
-for(let i = 0; i <= 5; i++) {
-    let playerSelection = playerPlay;
-    let computerSelection = computerPlay;
+for(let i = 0; i <6; i++) {
+    
     console.log(playRound());
     console.log(playerScore);
     console.log(computerScore);
-//    console.log(winCondition());
 }
+
+if (playerScore > computerScore){
+    console.log(wonGame);
+}
+else if (playerScore < computerScore){
+    console.log(loseGame);
+}
+
+}
+
+
+
+
 
 
 // Win condition functforion below here ==>
