@@ -7,10 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>rock scissor paper </h1>
+    <h1>Rock Scissor Paper</h1>
 
 <script>
-function computerPlay() {
+
+
+// Win, Lose, Draw,Score statements=>
+let playerScore = 0;
+let computerScore = 0;
+let win = 'You win!';
+let lose = 'You lose!';
+let draw = 'Draw match!';
+let wonGame = 'Human you won!';
+let loseGame = 'Human you lost!';
+
+// Choose the number of loops / rounds
+answer = prompt('Select a round number')
+
+// Computer and Users choose their weapons 
+  function computerPlay() {
     function randomNumber() { 
         return Math.floor(Math.random() * (3-0) + 0);
     }
@@ -18,50 +33,73 @@ function computerPlay() {
 
     return choiceNumber[randomNumber()]     
 }
- function playerPlay(){
+  function playerPlay(){
     let playerSelection = prompt('Paper, Rock or Scissor!').toLowerCase();
     
     if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection ==='scissor'){
         return playerSelection;
     } else {
-        console.log("Fai la tue scelta correttamente!")
+        console.log("Fai la tua scelta correttamente!")
         return playerPlay()
     }
 }
 
- // let playerSelection = prompt('Paper, Rock or Scissor!').toLowerCase();
 
 
-function playRound() {
+ // The game start below =>
+ function playRound() {
    
-    const computerSelection = computerPlay();
-    const playerSelection = playerPlay();
+    let computerSelection = computerPlay();
+    let playerSelection = playerPlay();
 
     if (playerSelection === computerSelection) {
-        return 'Draw!';
+        return draw + ' Think like a computer, congrtz!' ;
     } else if (playerSelection === 'scissor' && computerSelection === 'paper'){
-        return 'U Won!';
+        playerScore++;
+        return win + ' Scissor cut Paper !';
     } else if (playerSelection === 'scissor' && computerSelection === 'rock' ){
-        return 'U Lose!';
+        computerScore++;
+        return lose + ' Scissor destroyed by Rock!';
     } else if (playerSelection === 'paper' && computerSelection === 'rock'){
-        return 'U Won!';
+        playerScore++;
+        return win + ' Paper eat Rock!';
     } else if (playerSelection === 'paper' && computerSelection === 'scissor'){
-        return 'U Lose!';
+        computerScore++;
+        return lose + ' Paper cut by Scissor!';
     } else if (playerSelection === 'rock' && computerSelection === 'scissor'){
-        return 'U Won!';
+        playerScore++;
+        return win + ' Rock destroys Scissor!';
     } else if (playerSelection === 'rock' && computerSelection === 'paper'){
-        return 'U Lose!'
+        computerScore++;
+        return lose + 'Rock eaten by Paper!';
     }
     
 }
 
+// 'for' Loop to define the number of rounds and a winner
+for(let i = 0; i <= 5; i++) {
+    let playerSelection = playerPlay;
+    let computerSelection = computerPlay;
+    console.log(playRound());
+    console.log(playerScore);
+    console.log(computerScore);
+//    console.log(winCondition());
+}
+
+
+// Win condition functforion below here ==>
+//function winCondition() {
+//    if (playerScore === 5) {
+//        return wonGame;
+//    } else if (computerScore === 5) {
+//        return loseGame;
+        
+//    }
+//}
 
 
 
+</script>   
 
-
-
-</script>
-    
 </body>
 </html>
