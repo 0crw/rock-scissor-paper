@@ -7,9 +7,9 @@ let computerScore = 0;
 const win = 'You win!';
 const lose = 'You lose!';
 const draw = 'Draw match!';
-const wonGame = 'Human you won!';
-const loseGame = 'Human you lost!';
-const tieGame = 'Tie!';
+const wonGame = 'HUMAN WIN!';
+const loseGame = 'NATURE WIN!';
+const tieGame = 'EQUILIBRIUM!';
 
 
 
@@ -27,27 +27,27 @@ const actualRoundPl = document.getElementById('actualRoundPl');
     rockBtn.addEventListener('click', () => {
         playerSelection = 'rock';
         roundPlayed++;
-        actualScore.textContent = 'Your Score: ' + playerScore;
-        actualScoreCp.textContent = 'Computer Score: ' + computerScore;
-        actualRoundPl.textContent = 'Round played: ' + roundPlayed;
+        actualScore.textContent = 'HUMAN: ' + playerScore;
+        actualScoreCp.textContent = 'NATURE: ' + computerScore;
+        actualRoundPl.textContent = 'ROUND: ' + roundPlayed;
         playRound();
         game();
     })
     paperBtn.addEventListener('click', () => {
         playerSelection = 'paper'   
         roundPlayed++;
-        actualScore.textContent = 'Your Score: ' + playerScore;
-        actualScoreCp.textContent = 'Computer Score: ' + computerScore;
-        actualRoundPl.textContent = 'Round played: ' + roundPlayed;
+        actualScore.textContent = 'HUMAN: ' + playerScore;
+        actualScoreCp.textContent = 'NATURE: ' + computerScore;
+        actualRoundPl.textContent = 'ROUND: ' + roundPlayed;
         playRound();
         game();  
     })
     scissorBtn.addEventListener('click', () => {
         playerSelection = 'scissor'   
         roundPlayed++;
-        actualScore.textContent = 'Your Score: ' + playerScore;
-        actualScoreCp.textContent = 'Computer Score: ' + computerScore;
-        actualRoundPl.textContent = 'Round played: ' + roundPlayed;
+        actualScore.textContent = 'HUMAN: ' + playerScore;
+        actualScoreCp.textContent = 'NATURE: ' + computerScore;
+        actualRoundPl.textContent = 'ROUND: ' + roundPlayed;
         playRound();
         game();
     })
